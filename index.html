@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>João Victor — Editor de Vídeo</title>
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -33,7 +34,6 @@
 
   .wrap{padding-left:clamp(20px,6vw,72px);padding-right:clamp(20px,6vw,72px);}
 
-  /* ---------- reveal utility ---------- */
   .reveal{
     opacity:0;
     transform:translateY(36px);
@@ -45,7 +45,6 @@
   .reveal-right{transform:translateX(48px);}
   .reveal-right.in{transform:translateX(0);}
 
-  /* ---------- NAV ---------- */
   nav{
     position:fixed;top:0;left:0;right:0;z-index:200;
     display:flex;justify-content:space-between;align-items:center;
@@ -66,7 +65,6 @@
   .nav-links a:hover{color:var(--text);}
   @media(max-width:700px){.nav-links{display:none;}}
 
-  /* ---------- HERO ---------- */
   .hero{
     min-height:100vh;
     display:flex;flex-direction:column;justify-content:flex-end;
@@ -128,12 +126,10 @@
   .scroll-hint .line{width:1px;height:26px;background:var(--text-dim);animation:pulse 1.8s ease-in-out infinite;}
   @keyframes pulse{0%,100%{opacity:.3;}50%{opacity:1;}}
 
-  /* ---------- SECTION HEADER ---------- */
   .sec-head{padding:110px clamp(20px,6vw,72px) 50px;}
   .sec-tag{font-size:12px;color:var(--text-dim);margin-bottom:14px;}
   .sec-head h2{font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(28px,4vw,46px);}
 
-  /* ---------- ABOUT ---------- */
   .about{
     display:grid;grid-template-columns:1fr 1fr;gap:60px;
     padding:0 clamp(20px,6vw,72px) 120px;align-items:center;
@@ -151,7 +147,6 @@
     border:1px solid var(--line);
   }
 
-  /* ---------- SPECIALTIES / RESUME ---------- */
   .specialties{
     display:grid;grid-template-columns:repeat(3,1fr);gap:50px;
     padding:0 clamp(20px,6vw,72px) 130px;
@@ -177,7 +172,6 @@
   }
   .do-list li:first-child{padding-top:0;}
 
-  /* ---------- PORTFOLIO ---------- */
   .filters{display:flex;gap:8px;padding:0 clamp(20px,6vw,72px);margin-bottom:36px;flex-wrap:wrap;}
   .filter-btn{
     font-family:'Inter',sans-serif;font-size:12px;padding:9px 18px;
@@ -216,7 +210,6 @@
   .p-info{display:flex;justify-content:space-between;padding:14px 2px;font-size:14px;}
   .p-info span{color:var(--text-dim);font-size:12px;}
 
-  /* ---------- CONTACT ---------- */
   .contact{
     padding:140px clamp(20px,6vw,72px) 50px;
     background:var(--bg-2);
@@ -340,7 +333,7 @@
 
 <section id="contato" class="contact reveal">
   <h2>Vamos editar<br>seu próximo corte.</h2>
-  <a class="contact-email" href="mailto:email@exemplo.com">santtosjoaovictor19@gmail.com</a>
+  <a class="contact-email" href="mailto:santtosjoaovictor19@gmail.com">santtosjoaovictor19@gmail.com</a>
   <div class="footer-row">
     <span>João Victor © 2026</span>
     <span><a href="https://www.youtube.com/@jota_dits">YouTube</a> &nbsp; <a href="https://www.tiktok.com/@jotaae">TikTok</a></span>
@@ -348,7 +341,6 @@
 </section>
 
 <script>
-  // scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
@@ -360,7 +352,6 @@
   },{threshold:0.15});
   revealEls.forEach(el=>io.observe(el));
 
-  // skill bars fill when visible
   const bars = document.querySelectorAll('.skill-bar span');
   const barIo = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
@@ -372,13 +363,11 @@
   },{threshold:0.4});
   bars.forEach(b=>barIo.observe(b));
 
-  // nav background on scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll',()=>{
     nav.classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  // portfolio data + filter
   const works = [
     {title:"Bastidores", format:"vertical", tag:"Vertical"},
     {title:"Reel de produto", format:"vertical", tag:"Vertical"},
