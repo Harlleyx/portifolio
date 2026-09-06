@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="João Victor — editor de vídeo freelancer especializado em AMV, conteúdo vertical para redes sociais e vídeos longos para YouTube.">
+<meta name="theme-color" content="#0a0a0b">
 <title>João Victor — Editor de Vídeo</title>
 <link rel="icon" type="image/jpeg" href="favicon.jpg">
+<link rel="apple-touch-icon" href="favicon.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -33,6 +36,8 @@
   ::selection{background:var(--text);color:var(--bg);}
 
   .wrap{padding-left:clamp(20px,6vw,72px);padding-right:clamp(20px,6vw,72px);}
+
+  #sobre, #especialidades, #trabalhos, #contato{scroll-margin-top:84px;}
 
   .reveal{
     opacity:0;
@@ -235,7 +240,7 @@
 </head>
 <body>
 
-<nav id="nav">
+<nav id="nav" aria-label="Navegação principal">
   <div class="nav-logo">João Victor</div>
   <div class="nav-links">
     <a href="#sobre">Sobre</a>
@@ -271,7 +276,7 @@
     <h2>De AMV a freelancer completo.</h2>
   </div>
   <div class="about">
-    <div class="about-image reveal reveal-left"></div>
+    <div class="about-image reveal reveal-left" role="img" aria-label="Tela de edição de vídeo em software de edição"></div>
     <div class="about-text reveal reveal-right">
       <p>
         Comecei editando AMVs/Edits para o tiktok e continuo até o momento.
@@ -369,15 +374,15 @@
   });
 
   const works = [
-    {title:"Bastidores", format:"vertical", tag:"Vertical"},
-    {title:"Reel de produto", format:"vertical", tag:"Vertical"},
-    {title:"Short de humor", format:"vertical", tag:"Vertical"},
-    {title:"Trailer de temporada", format:"amv", tag:"AMV"},
-    {title:"Sync de batida", format:"amv", tag:"AMV"},
-    {title:"Montagem de luta", format:"amv", tag:"AMV"},
-    {title:"Review em vídeo", format:"longform", tag:"Longo"},
-    {title:"Podcast cortado", format:"longform", tag:"Longo"},
-    {title:"Vlog editado", format:"longform", tag:"Longo"},
+    {format:"vertical", tag:"Vertical"},
+    {format:"vertical", tag:"Vertical"},
+    {format:"vertical", tag:"Vertical"},
+    {format:"amv", tag:"AMV"},
+    {format:"amv", tag:"AMV"},
+    {format:"amv", tag:"AMV"},
+    {format:"longform", tag:"Longo"},
+    {format:"longform", tag:"Longo"},
+    {format:"longform", tag:"Longo"},
   ];
   const grid = document.getElementById('grid');
   function render(filter){
@@ -392,7 +397,7 @@
           <span class="tag">${w.tag}</span>
           <div class="play"></div>
         </div>
-        <div class="p-info"><span>${w.title}</span><span>${w.tag}</span></div>
+        <div class="p-info"><span>Em breve</span><span>${w.tag}</span></div>
       `;
       grid.appendChild(card);
       io.observe(card);
